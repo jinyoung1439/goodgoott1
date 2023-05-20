@@ -1,0 +1,52 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  config:
+    import: aws.properties
+  datasource:
+    url: ${rds.endpoint}
+    username: ${rds.username}
+    password: ${rds.password}
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      pool-name: HikariPool-1
+  thymeleaf:
+    cache: false
+logging:
+  level:
+    jdbc:
+      sqlonly: off
+      sqltiming: info
+      resultsettable: info
+      audit: off
+      resultset: off
+      connection: off
+      # 포트 - 8085
+      # 기본주소 - /
+      # devtools - 바로적용 모듈
+      # config.import - 프로퍼티 불러오기
+      # datasource - DB
+      # CP - hikari
+        # 연결 시간 초과 30초
+        # 최대 풀 크기 10
+        # 최소 유휴 5 (최소 연결 수)
+        # 유휴 시간 초과 10분 (연결이 유휴 상태로 유지될 수 있는 최대 시간)
+        # 최대수명 30분 (연결 풀에서 활성상태로 유지될 수 있는 최대 시간)
+      # Template - thymeleaf
+        # 개발단계 바로적용(배포시 true)
+      # log4jdbc - 쿼리 로깅
+        # off - 사용하지 않음
+        # info - 정보성 로그
+        # warn - 경고성 로그
+        # error - 에러 로그
+        # fatal - 심각한 문제 로그
