@@ -23,7 +23,7 @@
 
 #### 3. 설치된 라이브러리 목록 
 
-![KakaoTalk_20230518_183734910](https://github.com/WonJae0914/goodgoott/assets/120714001/e9bb95d5-6002-40b1-b6fc-fd6f116eb560)
+![KakaoTalk_20230518_183734910](https://github.com/WonJae0914/goodgoott/assets/120714001/5573535f-f03b-4ed0-be78-a2a7fdc5113f)
 
   
   - 추가적으로 필요할 경우 각자 설치
