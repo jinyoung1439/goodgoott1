@@ -17,7 +17,7 @@
   - 객체명 URI 포함 시 복수로 명시 <br>
   ex) <br>
     @GetMapping("/users") <br>
-    public String saveUser(){}
+    public String saveUser(){} 
   - 명사형으로 URI 명시
   - 그 외 부분들은 각 자 알아서
 
