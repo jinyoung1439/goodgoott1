@@ -3,13 +3,23 @@ server:
   servlet:
     context-path: /
 spring:
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+        use_sql_comments: true
+        id:
+          new_generator_mappings: false
   devtools:
     livereload:
       enabled: true
+    restart:
+      enabled: false
   config:
     import: aws.properties
   datasource:
-    url: ${rds.endpoint}
+    url: ${rds.endpoint}/goodgoott
     username: ${rds.username}
     password: ${rds.password}
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
@@ -31,6 +41,16 @@ logging:
       audit: off
       resultset: off
       connection: off
+    org:
+      springframework:
+        web:
+          servlet: debug
+      hibernate:
+        sql: debug
+        type:
+          descriptor:
+            sql: trace
+
       # 포트 - 8085
       # 기본주소 - /
       # devtools - 바로적용 모듈
