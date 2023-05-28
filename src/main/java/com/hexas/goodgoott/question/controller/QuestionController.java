@@ -6,19 +6,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.ByteArrayHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/questions")
 public class QuestionController {
     private List<Question> questionList = new ArrayList<>();
 
     @GetMapping
-    public List<Question> getQuestions() {
-        return questionList;
+    public String getQuestions(Model model) {
+        model.addAttribute("question_list", questionList);
+        return "question/question_list";
     }
 
     @GetMapping("/{id}")
