@@ -16,6 +16,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/questions")
 public class QuestionController {
+
+    // Author: KD Kim
+    // Date: May 28, 2023
     private List<Question> questionList = new ArrayList<>();
 
     @GetMapping

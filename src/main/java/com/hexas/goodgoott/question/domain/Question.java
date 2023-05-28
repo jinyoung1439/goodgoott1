@@ -9,6 +9,10 @@ import lombok.Data;
 @Data
 @Entity
 public class Question {
+
+    // Author: KD Kim
+    // Date: May 28, 2023
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
