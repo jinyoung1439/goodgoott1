@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>개발지식게시판</title>
+    <link rel="stylesheet" type="text/css" href="../css/dev_info/devinfo_writing.css">
+</head>
+<body>
+    <h1>개발지식게시판</h1>
+    
+    <form action="/devinfo" method="POST">
+        <label for="title">제목:</label><br>
+        <input type="text" id="title" name="dev_title" required><br><br>
+        
+        <label for="author">작성자:</label><br>
+        <input type="text" id="author" name="user_id" required><br><br>
+        
+        <label for="content">내용:</label><br>
+        <textarea id="content" name="dev_content" rows="5" cols="50" required></textarea><br><br>
+        
+        <input type="submit" value="게시글 작성">
+    </form>
+</body>
+</html>
