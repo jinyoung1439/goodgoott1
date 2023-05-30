@@ -1,6 +1,5 @@
 package com.hexas.goodgoott.employment_info.domain;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,9 +12,6 @@ public class EmploymentInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long employment_idx;
-
     private String employment_title,employment_content, user_id;
-
-
 
 }

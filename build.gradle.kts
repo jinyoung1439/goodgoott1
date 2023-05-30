@@ -37,7 +37,12 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	implementation("org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16")
-	implementation("org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE")
+//	implementation("org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE")
+//	implementation("com.amazonaws:aws-java-sdk-s3:1.12.472")
+	implementation(platform("software.amazon.awssdk:bom:2.20.56"))
+	implementation("software.amazon.awssdk:s3")
+	implementation("software.amazon.awssdk:sso")
+	implementation("software.amazon.awssdk:ssooidc")
 }
 
 tasks.withType<Test> {

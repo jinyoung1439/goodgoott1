@@ -6,9 +6,6 @@ spring:
   jpa:
     properties:
       hibernate:
-        format_sql: true
-        highlight_sql: true
-        use_sql_comments: true
         id:
           new_generator_mappings: false
   devtools:
@@ -36,20 +33,17 @@ logging:
   level:
     jdbc:
       sqlonly: off
-      sqltiming: info
-      resultsettable: info
+      sqltiming: debug
+      resultsettable: debug
       audit: off
       resultset: off
       connection: off
+    root: info
     org:
       springframework:
         web:
           servlet: debug
-      hibernate:
-        sql: debug
-        type:
-          descriptor:
-            sql: trace
+
 
       # 포트 - 8085
       # 기본주소 - /
@@ -70,3 +64,4 @@ logging:
         # warn - 경고성 로그
         # error - 에러 로그
         # fatal - 심각한 문제 로그
+

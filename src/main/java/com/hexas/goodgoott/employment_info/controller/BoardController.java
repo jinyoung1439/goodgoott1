@@ -21,9 +21,8 @@ public class BoardController {
         return "employment_info/create";
     }
     @PostMapping("/create")
-    public void write(@ModelAttribute("EmploymentInfo") EmploymentInfo employmentInfo){
+    public String write(@ModelAttribute("EmploymentInfo") EmploymentInfo employmentInfo){
         boardService.save(employmentInfo);
+        return "employment_info/create";
     }
-
-
 }
