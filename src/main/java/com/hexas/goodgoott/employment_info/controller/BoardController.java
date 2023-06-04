@@ -4,10 +4,7 @@ import com.hexas.goodgoott.employment_info.domain.EmploymentInfo;
 import com.hexas.goodgoott.employment_info.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -37,4 +34,11 @@ public class BoardController {
         mv.addObject("list", list);
         return mv;
     }
+    @GetMapping("/detail/list/{idx}")
+    public ModelAndView detail(@PathVariable("idx") int idx, ModelAndView mv){
+
+        return mv;
+    }
+
+
 }
