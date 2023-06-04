@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 리스트</title>
+</head>
+<body>
+<h1>게시판 리스트</h1>
+<table>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>내용</th>
+        <th>작성일</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="post : ${list}">
+        <td th:text="${post.employment_idx}"></td>
+        <td><a th:href="@{/list/detail/{idx}(idx=${post.employment_idx})}" th:text="${post.employment_title}"></a></td>
+        <td th:text="${post.employment_content}"></td>
+        <td th:text="${#dates.format(post.create_date, 'yyyy-MM-dd HH:mm:ss')}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
