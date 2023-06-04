@@ -19,8 +19,18 @@ public class SpringSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests().requestMatchers(
-                new AntPathRequestMatcher("/**")).permitAll();
+        http.
+                csrf().disable().
+                authorizeHttpRequests().requestMatchers(
+                new AntPathRequestMatcher("/**")).permitAll()
+                .and()
+                .formLogin()
+                .loginPage("/users/login")
+                .defaultSuccessUrl("/users/list")
+                .and()
+                .logout()
+                .logoutSuccessUrl("/users/login")
+                .invalidateHttpSession(true); // true : http 세션 초기화, false : 초기화 x
                 return http.build();
     }
     @Bean

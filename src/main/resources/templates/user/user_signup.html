@@ -2,30 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <!-- 부트스트랩 CSS 링크 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<h1>회원가입</h1>
-<!--<form th:action="@{/users/signup}" th:object="${}" method="post">-->
-<!--    <div th:replace="~{form_errors :: formErrorsFragment}"></div>-->
-    <div class="mb-3">
-        <label for="username" class="form-label">사용자ID</label>
-        <input type="text" th:field="*{username}" class="form-control">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 mt-5">
+            <h2 class="text-center">Sign Up</h2>
+            <form method="POST" action="/users/signup_proc">
+                <div class="form-group">
+                    <label for="user_id">User ID</label>
+                    <input type="text" class="form-control" id="user_id" name="user_id" placeholder="Enter user ID">
+                </div>
+                <div class="form-group">
+                    <label for="pw">Password</label>
+                    <input type="password" class="form-control" id="pw" name="pw" placeholder="Enter password">
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </form>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="password1" class="form-label">비밀번호</label>
-        <input type="password" th:field="*{password1}" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label for="password2" class="form-label">비밀번호 확인</label>
-        <input type="password" th:field="*{password2}" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">이메일</label>
-        <input type="email" th:field="*{email}" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-primary">회원가입</button>
-</form>
-
+</div>
+<!-- 부트스트랩 JS 링크 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
