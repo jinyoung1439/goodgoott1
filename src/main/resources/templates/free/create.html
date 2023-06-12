@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!--      layout:decorator="layout/default_layout"-->
+<!-- layout Content -->
+<th:block layout:fragment="content">
+    <div id="wrapper">
+        <div class="container">
+            <form action="/free/create/action" method="post">
+                <div class="col-md-12 mt-4">
+                    <!-- 				<button type="button" class="btn btn-danger" onclick="fnDelete()">Delete</button>-->
+                    <div class="mb-3">
+                        <label class="form-label font-weight-bold"> <span
+                                class="text-danger">* </span>제목
+                        </label> <input type="text" class="form-control" name="free_title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label font-weight-bold"> <span
+                                class="text-danger">* </span>내용
+                        </label> <input type="text" class="form-control" name="free_content" required>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <button type="button" class="btn btn-success"
+                            onclick="javascript:location.href='/free/list'">목록으로</button>
+                    <button type="button" class="btn btn-primary"
+                            onclick="fnSubmit();">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script th:inline="javascript">
+        var userId = document.getElementById("userId").value;
+
+        function fnSubmit() {
+            $("#frm").submit();
+        }
+
+    </script>
+</th:block>
+<!-- <script th:inline="javascript">
+
+</script> -->
+</html>
